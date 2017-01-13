@@ -211,7 +211,12 @@ class Pokemon {
                             if let descDict = descResult.value as? Dictionary<String, AnyObject> {
                                 
                                 if let description = descDict["description"] as? String {
-                                    self._description = description
+                                    
+                                    var tempStr = description
+                                    
+                                    tempStr = tempStr.replacingOccurrences(of: "\n", with: " ")
+                                    
+                                    self._description = tempStr
                                     
                                 }
                                 
